@@ -21,8 +21,35 @@
     left: 35%;
     transform: translate(-50%, -50%);
     color: $color-secondary-dark;
-    font-size: 4rem;
+  }
+
+  &__title {
+    font-size: 8rem;
     letter-spacing: 1rem;
+  }
+
+  &__socials {
+    font-size: 3rem;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__icons {
+    
+    &:hover {
+      &::after {
+        background-position: 100%;
+      }
+    }
+
+    &::after {
+      transition: all 300ms;
+      content: "";
+      display: block;
+      height: 2px;
+      background-image: linear-gradient(90deg, transparent 0%, transparent 50%, $color-secondary-dark 50%);
+      background-size: 200%;
+    }
   }
 }
 

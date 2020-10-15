@@ -19,3 +19,11 @@ body {
   padding: 1%;
   box-sizing: border-box;
 }
+
+::selection {
+  background: $color-primary-dark;
+}
+
+::-moz-selection {
+  background: $color-primary-dark;
+}
