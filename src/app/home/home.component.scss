@@ -1,0 +1,68 @@
+@import '../../styles/abstract/variables';
+
+.header {
+  position: relative;
+  height: 96vh;
+  overflow: hidden;
+  background-color: $color-secondary-light;
+
+  &__background {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: $color-primary-dark;
+  }
+
+  &__textbox {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    color: $color-secondary-dark;
+    font-size: 4rem;
+    letter-spacing: 1rem;
+  }
+}
+
+.navigation {
+  &__nav {
+    list-style: none;
+    position: absolute;
+    right: 4vw;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    justify-content: space-between;
+  }
+
+  &__item {
+    line-height: 1;
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-primary-light 50%);
+    background-size: 220%;
+    transition: all 400ms;
+    display: inline-block;
+
+    &:hover {
+      background-position: 100%;
+      transform: translateX(-1rem);
+      color: $color-secondary-light;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+    }
+  }
+}

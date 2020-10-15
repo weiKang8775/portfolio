@@ -1,0 +1,17 @@
+<header class="header">
+  <div class="header__background" [@openClose]="isOpen ? 'open' : 'closed'">
+    &nbsp;
+  </div>
+  <div class="header__textbox">
+    <h1 class="header__title">Wei Kang</h1>
+  </div>
+</header>
+<nav class="navigation">
+  <ul class="navigation__nav">
+    <li class="navigation__item"><a (click)="toggle()">Projects</a></li>
+    <li class="navigation__item"><a>Skills</a></li>
+    <li class="navigation__item"><a>Tutorial</a></li>
+    <li class="navigation__item"><a>About</a></li>
+    <li class="navigation__item"><a>Contact</a></li>
+  </ul>
+</nav>
