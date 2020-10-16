@@ -1,21 +1,21 @@
 <header class="header">
-  <div class="header__background" [@openClose]="isOpen ? 'open' : 'closed'">
+  <div class="header__background">
     &nbsp;
   </div>
   <div class="header__textbox">
     <h1 class="header__title">Wei Kang</h1>
     <div class="header__socials">
-      <span class="header__icons">LinkedIn</span>
-      <span class="header__icons">GitHub</span>
+      <span class="header__icon"><a href="https://www.linkedin.com/in/wei-kang-504aab175/" target="_blank" class="header__link">LinkedIn</a></span>
+      <span class="header__icon"><a href="https://github.com/weiKang8775" target="_blank" class="header__link">GitHub</a></span>
     </div>
   </div>
 </header>
 <nav class="navigation">
   <ul class="navigation__nav">
-    <li class="navigation__item"><a (click)="toggle()">Projects</a></li>
-    <li class="navigation__item"><a>Skills</a></li>
-    <li class="navigation__item"><a>Tutorial</a></li>
-    <li class="navigation__item"><a>About</a></li>
-    <li class="navigation__item"><a>Contact</a></li>
+    <li class="navigation__item"><a routerLink="/about" class="navigation__link">Projects</a></li>
+    <li class="navigation__item"><a class="navigation__link">Skills</a></li>
+    <li class="navigation__item"><a class="navigation__link">Tutorial</a></li>
+    <li class="navigation__item"><a class="navigation__link">About</a></li>
+    <li class="navigation__item"><a class="navigation__link">Contact</a></li>
   </ul>
 </nav>
