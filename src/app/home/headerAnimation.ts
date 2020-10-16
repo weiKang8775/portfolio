@@ -7,12 +7,8 @@ export const headingAnimation = animation([
       style({ transform: "translate(-50%, -50%) scale(1)", offset: 0 }),
       style({
         transform: "translate(-50%, -50%) scale(1.1)",
-        offset: 0.1
+        offset: 0.3
       }),
-      // style({
-      //   transform: "translate(-50%, -50%) scale(1.1)",
-      //   offset: 0.2
-      // }),
       style({ transform: "translate(-50%, -50%) scale(0)", offset: 1 })
     ])
   )
