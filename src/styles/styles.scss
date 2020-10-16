@@ -1,29 +1,6 @@
 @import './abstract/variables';
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
 
-html {
-  font-size: 62.5%;
-}
+@import './base/base.scss';
+@import './base/typography';
 
-body {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: $color-dark;
-  padding: 1%;
-  box-sizing: border-box;
-}
-
-::selection {
-  background: $color-primary-dark;
-}
-
-::-moz-selection {
-  background: $color-primary-dark;
-}
+@import './layouts/background-circle';

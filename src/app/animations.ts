@@ -29,27 +29,28 @@ export const slideInAnimation =   trigger('routeAnimations', [
     ]),
 
 
-    query(':leave', [
-      group([
-        query('.header__background', [
-          animate('900ms 0s ease-in', keyframes([
-            style({ transform: 'translate(-50%, -50%) scale(1)', offset: 0 }),
-            style({ transform: 'translate(-50%, -50%) scale(1.1)', offset: 0.3 }),
-            style({ transform: 'translate(-50%, -50%) scale(0)', offset: 1 })
-          ]))
-        ]),
-        query('.header__textbox', [
-          animate('900ms 0s ease-in', keyframes([
-            style({ transform: 'translate(-50%, -50%) scale(1)', offset: 0 }),
-            style({ transform: 'translate(-50%, -50%) translateX(10rem) scale(1.1)', offset: 0.3 }),
-            style({ transform: 'translate(-50%, -50%) translateX(-100vw) scale(0)', offset: 1 }),
-          ]))
-        ])
-      ]),
-      query('nav', [
-        animate('500ms 0s ease-in', style({ opacity: 0 }))
-      ])
-    ]),
+    query(':leave', animateChild()),
+    // [
+    //   group([
+    //     query('.background-circle', [
+    //       animate('900ms 0s ease-in', keyframes([
+    //         style({ transform: 'translate(-50%, -50%) scale(1)', offset: 0 }),
+    //         style({ transform: 'translate(-50%, -50%) scale(1.1)', offset: 0.3 }),
+    //         style({ transform: 'translate(-50%, -50%) scale(0)', offset: 1 })
+    //       ]))
+    //     ]),
+    //     query('.header__textbox', [
+    //       animate('900ms 0s ease-in', keyframes([
+    //         style({ transform: 'translate(-50%, -50%) scale(1)', offset: 0 }),
+    //         style({ transform: 'translate(-50%, -50%) translateX(10rem) scale(1.1)', offset: 0.3 }),
+    //         style({ transform: 'translate(-50%, -50%) translateX(-100vw) scale(0)', offset: 1 }),
+    //       ]))
+    //     ]),
+    //     query('nav', [
+    //       animate('500ms 0s ease-in', style({ opacity: 0 }))
+    //     ])
+    //   ])
+    // ]),
 
 
     query(':enter', [

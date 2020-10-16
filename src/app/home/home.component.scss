@@ -6,17 +6,6 @@
   overflow: hidden;
   background-color: $color-secondary-light;
 
-  &__background {
-    height: 150vw;
-    width: 150vw;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background-color: $color-primary-dark;
-  }
-
   &__textbox {
     position: absolute;
     top: 40%;
@@ -27,6 +16,7 @@
 
   &__title {
     font-size: 8rem;
+    font-weight: 100;
     letter-spacing: 1rem;
   }
 
@@ -61,6 +51,8 @@
     }
   }
 }
+
+
 
 .navigation {
   &__nav {

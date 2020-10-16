@@ -1,0 +1,20 @@
+.background-circle {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: $color-primary-dark;
+
+  &--home {
+    height: 150vw;
+    width: 150vw;
+    top: 50%;
+    left: 0;
+  }
+
+  &--about {
+    height: 90vw;
+    width: 90vw;
+    top: 100%;
+    left: 0%;
+  }
+}
