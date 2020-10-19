@@ -20,12 +20,6 @@ import { Component, HostBinding, OnInit } from '@angular/core';
               style({ transform: 'translate(-50%, -50%) translateX(10rem) scale(1.1)', offset: 0.3 }),
               style({ transform: 'translate(-50%, -50%) translateX(-100vw) scale(0)', offset: 1 }),
             ]))
-          ]),
-          query('.navigation__item', [
-            style({ opacity: 1, transform: 'translate(-50%, -50%) translateX(7rem) translateY(1.5rem)'}),
-            stagger(-100, [
-              animate('1000ms 0s cubic-bezier(0.35, 0, 0.25, 1)', style({ opacity: 0, transform: 'translate(-50%, 50%) translateY(1.5rem) translateX(50rem)' }))
-            ])
           ])
         ]),
       ])

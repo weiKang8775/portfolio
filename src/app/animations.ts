@@ -4,12 +4,14 @@ import {
   group,
   keyframes,
   query,
+  stagger,
+  state,
   style,
   transition,
   trigger
 } from "@angular/animations";
 
-export const slideInAnimation =   trigger('routeAnimations', [
+export const routeAnimation =   trigger('routeAnimations', [
   transition('HomePage => *', [
 
     // Reset
@@ -59,5 +61,38 @@ export const slideInAnimation =   trigger('routeAnimations', [
 
 
     query(':enter', animateChild()),
+  ])
+]);
+
+export const navAnimation = trigger('toggleNav', [
+
+
+  state('open', style({
+    opacity: 1,
+    transform: 'translate(-50%, -50%)'
+  })),
+
+
+  state('closed', style({
+    opacity: 0,
+    transform: 'translate(-50%, 50%) translateX(50rem)'
+  })),
+
+
+  transition('open => closed', [
+    query('.navigation__item', [
+      stagger(-100, [
+        animate('1000ms 0s cubic-bezier(0.35, 0, 0.25, 1)', style({ opacity: 0, transform: 'translate(-50%, 50%) translateX(50rem)' }))
+      ])
+    ])
+  ]),
+
+
+  transition('closed => open', [
+    query('.navigation__item', [
+      stagger(-100, [
+        animate('1000ms 0s cubic-bezier(0.35, 0, 0.25, 1)', style({ opacity: 0, transform: 'translate(-50%, 50%)' }))
+      ])
+    ])
   ])
 ]);
