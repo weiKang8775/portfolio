@@ -10,58 +10,50 @@ import {
   transition,
   trigger
 } from "@angular/animations";
+import { pageAnimation } from './skills/skills-animations';
 
-export const routeAnimation =   trigger('routeAnimations', [
-  transition('HomePage => *', [
+const pageTransitions = [
+  style({ position: 'relative' }),
+  query(':enter, :leave', [
+    style({
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%'
+    })
+  ]),
 
-    // Reset
-    style({ position: 'relative' }),
-    query(':enter, :leave', [
-      style({
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%'
-      })
-    ]),
+  query(':enter', [
+    style({ opacity: 0 })
+  ]),
 
+  query(':leave', animateChild()),
 
-    query(':enter', [
-      style({ opacity: 0 })
-    ]),
+  query(':enter', [
+    animate('300ms ease-out', style({ opacity: 1 }))
+  ]),
 
+  query(':enter', animateChild()),
+];
 
-    query(':leave', animateChild()),
-    // [
-    //   group([
-    //     query('.background-circle', [
-    //       animate('900ms 0s ease-in', keyframes([
-    //         style({ transform: 'translate(-50%, -50%) scale(1)', offset: 0 }),
-    //         style({ transform: 'translate(-50%, -50%) scale(1.1)', offset: 0.3 }),
-    //         style({ transform: 'translate(-50%, -50%) scale(0)', offset: 1 })
-    //       ]))
-    //     ]),
-    //     query('.header__textbox', [
-    //       animate('900ms 0s ease-in', keyframes([
-    //         style({ transform: 'translate(-50%, -50%) scale(1)', offset: 0 }),
-    //         style({ transform: 'translate(-50%, -50%) translateX(10rem) scale(1.1)', offset: 0.3 }),
-    //         style({ transform: 'translate(-50%, -50%) translateX(-100vw) scale(0)', offset: 1 }),
-    //       ]))
-    //     ]),
-    //     query('nav', [
-    //       animate('500ms 0s ease-in', style({ opacity: 0 }))
-    //     ])
-    //   ])
-    // ]),
+export const routeAnimation = trigger('routeAnimations', [
+  transition('HomePage => *', pageTransitions),
+  transition('AboutPage => *', pageTransitions),
+  transition('SkillsPage => *', pageTransitions),
+  transition('ContactPage => *', pageTransitions)
+]);
 
+export const circleEnterAnimation = query('.background-circle', [
+  style({ transform: 'translate(-50%, -50%) scale(0)'}),
+  animate('900ms 100ms cubic-bezier(0.35, 0, 0.25, 1)', style({ transform: 'translate(-50%, -50%) scale(1)'}))
+]);
 
-    query(':enter', [
-      animate('300ms ease-out', style({ opacity: 1 }))
-    ]),
-
-
-    query(':enter', animateChild()),
-  ])
+export const circleExitAnimation = query('.background-circle', [
+  animate('900ms 0s ease-in', keyframes([
+    style({ transform: 'translate(-50%, -50%) scale(1)', offset: 0 }),
+    style({ transform: 'translate(-50%, -50%) scale(1.1)', offset: 0.3 }),
+    style({ transform: 'translate(-50%, -50%) scale(0)', offset: 1 })
+  ]))
 ]);
 
 export const navAnimation = trigger('toggleNav', [

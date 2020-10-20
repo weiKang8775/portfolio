@@ -1,0 +1,19 @@
+.item-background {
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  background-color: $color-primary-dark;
+  color: $color-secondary-light;
+  text-align: center;
+  margin: 2rem 2rem;
+}
+
+.item-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  line-height: 1;
+}

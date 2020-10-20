@@ -1,5 +1,6 @@
 import { animate, group, keyframes, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { circleExitAnimation } from '../animations';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,7 @@ import { Component, HostBinding, OnInit } from '@angular/core';
     trigger('pageAnimations', [
       transition(':leave', [
         group([
-          query('.background-circle', [
-            animate('900ms 0s ease-in', keyframes([
-              style({ transform: 'translate(-50%, -50%) scale(1)', offset: 0 }),
-              style({ transform: 'translate(-50%, -50%) scale(1.1)', offset: 0.3 }),
-              style({ transform: 'translate(-50%, -50%) scale(0)', offset: 1 })
-            ]))
-          ]),
+          circleExitAnimation,
           query('.header__textbox', [
             animate('900ms 0s ease-in', keyframes([
               style({ transform: 'translate(-50%, -50%) scale(1)', offset: 0 }),

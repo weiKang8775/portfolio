@@ -2,5 +2,10 @@
 
 @import './base/base.scss';
 @import './base/typography';
+@import './base/util';
 
 @import './layouts/background-circle';
+@import './layouts/navigation';
+@import './layouts/header';
+
+@import './components/skill-item';

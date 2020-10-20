@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { SkillsComponent } from './skills/skills.component';
 
 const appRoutes: Routes = [
 
@@ -12,7 +14,13 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent, data: { animation: 'HomePage' } },
 
   // About
-  { path: 'about', component: AboutComponent, data: { animation: "AboutPage" } }
+  { path: 'about', component: AboutComponent, data: { animation: "AboutPage" } },
+
+  // Skills
+  { path: 'skills', component: SkillsComponent, data: { animation: "SkillsPage" } },
+
+  // Contact
+  { path: 'contact', component: ContactComponent, data: { animation: "ContactPage" }}
 ]
 
 @NgModule({

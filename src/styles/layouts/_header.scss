@@ -1,0 +1,51 @@
+.header {
+  position: relative;
+  height: $height-default;
+  overflow: hidden;
+  background-color: $color-secondary-light;
+
+  &__textbox {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    color: $color-secondary-dark;
+  }
+
+  &__title {
+    font-size: 8rem;
+    font-weight: 100;
+    letter-spacing: 1rem;
+  }
+
+  &__socials {
+    font-size: 3rem;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__span {
+    &:hover {
+      &::after {
+        background-size: 100%;
+      }
+    }
+
+    &::after {
+      transition: all 300ms;
+      content: "";
+      display: block;
+      height: 2px;
+      background-image: linear-gradient(90deg, transparent 0%, transparent 50%, $color-secondary-dark 50%);
+      background-size: 200%;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}

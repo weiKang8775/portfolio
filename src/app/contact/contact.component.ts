@@ -1,12 +1,10 @@
-import { animate, keyframes, query, style, transition, trigger, group } from '@angular/animations';
+import { animate, group, query, style, transition, trigger } from '@angular/animations';
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { circleEnterAnimation, circleExitAnimation } from '../animations';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  animations: 
-  [
+  selector: 'app-contact',
+  animations: [
     trigger('pageAnimation', [
       transition(':enter', [
         group([
@@ -14,7 +12,7 @@ import { circleEnterAnimation, circleExitAnimation } from '../animations';
           query('.heading-textbox', [
             style({
                opacity: 0,
-               transform: 'translate(-20rem, -20rem) scale(0)'
+               transform: 'scale(0)'
             }),
             animate('900ms 100ms cubic-bezier(0.35, 0, 0.25, 1)', style({ opacity: 1, transform: 'none'}))
           ])
@@ -31,9 +29,10 @@ import { circleEnterAnimation, circleExitAnimation } from '../animations';
       ])
     ])
   ],
-  styleUrls: ['./about.component.scss']
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class ContactComponent implements OnInit {
   @HostBinding('@pageAnimation') public animatePage = true;
 
   constructor() { }
