@@ -1,0 +1,22 @@
+<div class="project-container">
+  <div class="project-display__left">
+    <h1 class="project-display__title">
+      {{ project.name }}
+    </h1>
+    <div class="project-display__description-container">
+      <p class="project-display__description">
+        {{ project.description }}
+      </p>
+    </div>
+  </div>
+  <div class="project-display__right">
+    <img src="../../../assets/images/alpha_blog.png" alt="alpha-blog" class="project-display__image">
+    <ul class="project-display__tags">
+      <li class="project-display__tag" *ngFor="let tag of project.tags">{{ tag }}</li>
+    </ul>
+    <span class="project-display__link" *ngIf="project.url"><a class="project-display__url" [href]="project.url" [target]="'_blank'">{{ project.url }}</a></span>
+    <div>
+      <a class="project-display__github-url" [href]="project.gitHubURL">View Code</a>
+    </div>
+  </div>
+</div>

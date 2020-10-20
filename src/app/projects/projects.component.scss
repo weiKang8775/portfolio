@@ -1,0 +1,15 @@
+@import '../../styles/abstract/variables';
+
+.project-container {
+  position: absolute;
+  top: 50%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+}
+
+.section-projects {
+  position: relative;
+  height: $height-default;
+  background-color: $color-secondary-light;
+  overflow: hidden;
+}
