@@ -5,6 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 const appRoutes: Routes = [
 
@@ -21,10 +22,13 @@ const appRoutes: Routes = [
   { path: 'skills', component: SkillsComponent, data: { animation: "SkillsPage" } },
 
   // Contact
-  { path: 'contact', component: ContactComponent, data: { animation: "ContactPage" }},
+  { path: 'contact', component: ContactComponent, data: { animation: "ContactPage" } },
 
   // Projects
-  { path: 'projects', component: ProjectsComponent }
+  { path: 'projects', component: ProjectsComponent, data: { animation: "ProjectsPage" }  },
+
+  // Tutorial
+  { path: 'tutorial', component: TutorialComponent, data: { animation: "TutorialPage" } }
 ]
 
 @NgModule({

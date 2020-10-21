@@ -40,7 +40,9 @@ export const routeAnimation = trigger('routeAnimations', [
   transition('HomePage => *', pageTransitions),
   transition('AboutPage => *', pageTransitions),
   transition('SkillsPage => *', pageTransitions),
-  transition('ContactPage => *', pageTransitions)
+  transition('ContactPage => *', pageTransitions),
+  transition('ProjectsPage => *', pageTransitions),
+  transition('TutorialPage => *', pageTransitions)
 ]);
 
 export const circleEnterAnimation = query('.background-circle', [

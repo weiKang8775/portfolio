@@ -1,4 +1,7 @@
 <div class="project-container">
+  <div class="project-display__prev">
+    &#10094;
+  </div>
   <div class="project-display__left">
     <h1 class="project-display__title">
       {{ project.name }}
@@ -10,13 +13,16 @@
     </div>
   </div>
   <div class="project-display__right">
-    <img src="../../../assets/images/alpha_blog.png" alt="alpha-blog" class="project-display__image">
+    <img alt="alpha-blog" class="project-display__image" [src]="project.imgURL">
     <ul class="project-display__tags">
       <li class="project-display__tag" *ngFor="let tag of project.tags">{{ tag }}</li>
     </ul>
-    <span class="project-display__link" *ngIf="project.url"><a class="project-display__url" [href]="project.url" [target]="'_blank'">{{ project.url }}</a></span>
+    <span class="project-display__link" *ngIf="project.url"><a class="project-display__url" target="_blank" [href]="project.url" [target]="'_blank'">{{ project.url }}</a></span>
     <div>
-      <a class="project-display__github-url" [href]="project.gitHubURL">View Code</a>
+      <a class="project-display__github-url" target="_blank" [href]="project.gitHubURL">View Code &rarr;</a>
     </div>
+  </div>
+  <div class="project-display__next">
+    &#10095;
   </div>
 </div>

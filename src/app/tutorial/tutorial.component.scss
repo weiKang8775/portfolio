@@ -1,0 +1,16 @@
+@import '../../styles/abstract/variables';
+
+.section-tutorial {
+  height: $height-default;
+  background-color: $color-secondary-light;
+  position: relative;
+}
+
+.tutorial-container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 40%;
+  font-size: 15rem;
+  color: $color-primary-dark;
+}
