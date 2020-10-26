@@ -1,11 +1,23 @@
 import { animate, group, keyframes, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { circleExitAnimation } from '../animations';
+import { circleEnterAnimation, circleExitAnimation } from '../animations';
 
 @Component({
   selector: 'app-home',
   animations: [
     trigger('pageAnimations', [
+      transition(':enter', [
+        group([
+          circleEnterAnimation,
+          query('.header__textbox', [
+            style({
+              opacity: 0,
+              transform: 'translate(-50%, -50%) translateX(-100vw)'
+            }),
+            animate('900ms 0s cubic-bezier(0.35, 0, 0.25, 1)', style({ opacity: 1, transform: 'translate(-50%, -50%)' }))
+          ])
+        ])
+      ]),
       transition(':leave', [
         group([
           circleExitAnimation,

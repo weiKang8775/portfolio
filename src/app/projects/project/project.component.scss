@@ -2,7 +2,6 @@
 
 .project-container {
   display: flex;
-  width: 50vw;
   align-items: center;
 }
 
@@ -48,6 +47,9 @@
     padding: 0 4px;
     font-weight: bolder;
     font-size: 1.2rem;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
   }
 
   &__url {
@@ -90,29 +92,5 @@
       transform: none;
       box-shadow: 0 1rem 1rem rgba($color: #000000, $alpha: .1)
     }
-  }
-
-  &__prev,
-  &__next {
-    color: $color-secondary-light;
-    cursor: pointer;
-    font-size: 2rem;
-    transition: all 300ms;
-
-    &:hover {
-      transform: translateY(-3px);
-    }
-
-    &:active {
-      transform: none;
-    }
-  }
-
-  &__prev {
-    padding-right: 4rem;
-  }
-
-  &__next {
-    padding-left: 4rem;
   }
 }

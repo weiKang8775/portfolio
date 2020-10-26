@@ -4,6 +4,14 @@
   </div>
   
   <div class="projects-container">
-    <app-project></app-project>
+    <div class="project-display__wrapper">
+      <div class="project-display__prev" (click)="getPrevProject()">
+        &#10094;
+      </div>
+      <app-project [project]="currentProject"></app-project>
+      <div class="project-display__next" (click)="getNextProject()">
+        &#10095;
+      </div>
+    </div>
   </div>
 </section>
