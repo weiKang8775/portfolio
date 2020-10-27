@@ -1,0 +1,27 @@
+.mobile-nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  &__nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: space-around;
+    font-size: $font-size-m;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    text-align: left;
+    color: $color-secondary-light;
+  }
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}

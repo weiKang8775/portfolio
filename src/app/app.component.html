@@ -1,4 +1,6 @@
-<app-navigation></app-navigation>
+<app-navigation *ngIf="!useMobileNav"></app-navigation>
+
+<div class="nav-toggle" routerLink="/mobile-nav" *ngIf="useMobileNav"></div>
 
 <div [@routeAnimations]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>

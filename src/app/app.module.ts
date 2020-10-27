@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
+import { LayoutModule } from "@angular/cdk/layout"
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +14,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectComponent } from './projects/project/project.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
+import { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { TutorialComponent } from './tutorial/tutorial.component';
     ContactComponent,
     ProjectsComponent,
     ProjectComponent,
-    TutorialComponent
+    TutorialComponent,
+    MobileNavigationComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    appRoutesModule
+    appRoutesModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

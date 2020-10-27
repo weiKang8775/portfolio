@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
@@ -28,7 +29,10 @@ const appRoutes: Routes = [
   { path: 'projects', component: ProjectsComponent, data: { animation: "ProjectsPage" }  },
 
   // Tutorial
-  { path: 'tutorial', component: TutorialComponent, data: { animation: "TutorialPage" } }
+  { path: 'tutorial', component: TutorialComponent, data: { animation: "TutorialPage" } },
+
+  // Mobile Nav
+  { path: 'mobile-nav', component: MobileNavigationComponent }
 ]
 
 @NgModule({

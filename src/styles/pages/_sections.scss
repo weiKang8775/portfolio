@@ -3,4 +3,10 @@
   height: 96vh;
   background-color: $color-secondary-light;
   overflow: hidden;
+  &__mobile-nav {
+    position: relative;
+    height: 96vh;
+    overflow: hidden;
+    background-color: $color-primary-light;
+  }
 }

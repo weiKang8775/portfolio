@@ -1,5 +1,7 @@
 import { transition, trigger, group, query, style, animate } from '@angular/animations';
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { circleEnterAnimation, circleExitAnimation } from '../animations';
 import { Project } from './Project';
 
@@ -32,15 +34,18 @@ import { Project } from './Project';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements OnInit, OnDestroy {
   projects: Project[];
   currentProject: Project;
   projectIndex: number;
   @HostBinding('@pageAnimation') animatePage = true;
+  useSwipe: boolean;
+  swipeSub: Subscription;
 
-  constructor() {
+  constructor(private breakPointObserver: BreakpointObserver) {
     this.projects = [];
     this.projectIndex = 0;
+    this.useSwipe = false;
   }
 
   ngOnInit(): void {
@@ -48,6 +53,13 @@ export class ProjectsComponent implements OnInit {
     this.projects.push(new Project("Natours", "Project built for the purposes of learning HTML and SCSS. It features animations that are coded entirely in SCSS.", ["HTML", "SCSS"], "../../../assets/images/Natours.png", "https://github.com/weiKang8775/Natours"));
     this.projects.push(new Project("Course Registration App", "Final project for a second year software course. It features Java GUI, MVC, multi-threading, and client server architecture. It also uses a MySQL database to store data.", ["Java", "MySQL"], "../../../assets/images/CourseRegistrationApp.png", "https://github.com/weiKang8775/CourseRegistrationApp/tree/master/ENSF409Project"));
     this.currentProject = this.projects[0];
+    this. swipeSub = this.breakPointObserver.observe('(max-width: 800px)').subscribe(result => {
+      this.useSwipe = result.matches;
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.swipeSub.unsubscribe();
   }
 
   getNextProject() {
@@ -58,5 +70,9 @@ export class ProjectsComponent implements OnInit {
   getPrevProject() {
     this.projectIndex = this.projectIndex - 1 < 0 ? this.projects.length - 1 : this.projectIndex - 1;
     this.currentProject = this.projects[this.projectIndex];
+  }
+
+  testTap() {
+    console.log("tap");
   }
 }
