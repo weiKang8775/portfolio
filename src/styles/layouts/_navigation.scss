@@ -1,6 +1,6 @@
 .navigation {
   &__nav {
-    z-index: 999;
+    z-index: 900;
     list-style: none;
     position: fixed;
     right: 4vw;
@@ -42,5 +42,30 @@
       text-decoration: none;
       color: inherit;
     }
+  }
+}
+
+.nav-toggle {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translate(-50%, 50%);
+  height: 6rem;
+  width: 6rem;
+  background-color: $color-primary-light;
+  border-radius: 50%;
+  cursor: pointer;
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 4rem;
+    width: 4rem;
+    background-color: $color-secondary-dark;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }

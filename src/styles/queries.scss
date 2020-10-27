@@ -69,11 +69,11 @@
       height: 180vw;
     }
 
-    &--projects {
-      height: 100vw;
-      width: 100vw;
-      left: 50%;
-    }
+    // &--projects {
+    //   height: 100vw;
+    //   width: 100vw;
+    //   left: 50%;
+    // }
   }
 
   .heading-textbox {
@@ -82,23 +82,23 @@
     }
   }
 
-  .projects-container {
-    left: 50%;
-    top: 50%;
-  }
+  // .projects-container {
+  //   left: 50%;
+  //   top: 50%;
+  // }
 
-  .project-container {
-    flex-direction: column;
-  }
+  // .project-container {
+  //   flex-direction: column;
+  // }
 
-  .project-display {
-    &__left {
-      width: auto;
-    }
-    &__right {
-      width: auto;
-      padding-left: 0;
-      padding-top: 2rem;
-    }
-  }
+  // .project-display {
+  //   &__left {
+  //     width: auto;
+  //   }
+  //   &__right {
+  //     width: auto;
+  //     padding-left: 0;
+  //     padding-top: 2rem;
+  //   }
+  // }
 }
