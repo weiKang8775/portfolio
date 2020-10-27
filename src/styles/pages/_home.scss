@@ -1,9 +1,4 @@
-.header {
-  position: relative;
-  height: $height-default;
-  overflow: hidden;
-  background-color: $color-secondary-light;
-
+.home {
   &__textbox {
     position: absolute;
     top: 40%;
@@ -19,7 +14,7 @@
   }
 
   &__socials {
-    font-size: 3rem;
+    font-size: $font-size-m;
     display: flex;
     justify-content: space-around;
   }

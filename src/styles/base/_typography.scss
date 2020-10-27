@@ -5,19 +5,19 @@
 
   &__span {
     font-weight: 100;
-    font-size: 16rem;
+    font-size: $font-size-xl;
     color: darken($color-primary-light, 3%);
     line-height: 1;
   }
 
   &__heading-primary {
-    font-size: 4rem;
+    font-size: $font-size-l;
     font-weight: 600;
     line-height: 1;
   }
 
   &__heading-secondary {
-    font-size: 4rem;
+    font-size: $font-size-l;
     font-weight: 100;
     line-height: 1;
     margin-bottom: 2rem;

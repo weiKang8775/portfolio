@@ -3,7 +3,7 @@ import { circleExitAnimation } from '../animations';
 
 export const pageAnimation = trigger('pageAnimation', [
   transition(':enter', [
-    query('.item-background', [
+    query('.skill-item__background', [
       style({ transform: 'scale(0)' }),
       stagger(50, [
         animate('500ms 0s ease', style({ transform: 'none' }))
@@ -11,7 +11,7 @@ export const pageAnimation = trigger('pageAnimation', [
     ])
   ]),
   transition(':leave', [
-    query('.item-background', [
+    query('.skill-item__background', [
       stagger(50, [
         animate('900ms 0s ease-in', keyframes([
           style({ transform: 'scale(1)', offset: 0 }),

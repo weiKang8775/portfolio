@@ -9,7 +9,7 @@ import { circleEnterAnimation, circleExitAnimation } from '../animations';
       transition(':enter', [
         group([
           circleEnterAnimation,
-          query('.header__textbox', [
+          query('.home__textbox', [
             style({
               opacity: 0,
               transform: 'translate(-50%, -50%) translateX(-100vw)'
@@ -21,7 +21,7 @@ import { circleEnterAnimation, circleExitAnimation } from '../animations';
       transition(':leave', [
         group([
           circleExitAnimation,
-          query('.header__textbox', [
+          query('.home__textbox', [
             animate('900ms 0s ease-in', keyframes([
               style({ transform: 'translate(-50%, -50%) scale(1)', offset: 0 }),
               style({ transform: 'translate(-50%, -50%) translateX(10rem) scale(1.1)', offset: 0.3 }),

@@ -6,6 +6,13 @@
 
 @import './layouts/background-circle';
 @import './layouts/navigation';
-@import './layouts/header';
 
-@import './components/skill-item';
+@import './pages/home';
+@import './pages/about';
+@import './pages/contact';
+@import './pages/tutorial';
+@import './pages/skills';
+@import './pages/projects';
+@import './pages/sections';
+
+@import './queries.scss';
