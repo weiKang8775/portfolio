@@ -34,18 +34,15 @@ import { Project } from './Project';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent implements OnInit, OnDestroy {
+export class ProjectsComponent implements OnInit {
   projects: Project[];
   currentProject: Project;
   projectIndex: number;
   @HostBinding('@pageAnimation') animatePage = true;
-  useSwipe: boolean;
-  swipeSub: Subscription;
 
   constructor(private breakPointObserver: BreakpointObserver) {
     this.projects = [];
     this.projectIndex = 0;
-    this.useSwipe = false;
   }
 
   ngOnInit(): void {
@@ -53,13 +50,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     this.projects.push(new Project("Natours", "Project built for the purposes of learning HTML and SCSS. It features animations that are coded entirely in SCSS.", ["HTML", "SCSS"], "../../../assets/images/Natours.png", "https://github.com/weiKang8775/Natours"));
     this.projects.push(new Project("Course Registration App", "Final project for a second year software course. It features Java GUI, MVC, multi-threading, and client server architecture. It also uses a MySQL database to store data.", ["Java", "MySQL"], "../../../assets/images/CourseRegistrationApp.png", "https://github.com/weiKang8775/CourseRegistrationApp/tree/master/ENSF409Project"));
     this.currentProject = this.projects[0];
-    this. swipeSub = this.breakPointObserver.observe('(max-width: 800px)').subscribe(result => {
-      this.useSwipe = result.matches;
-    })
-  }
-
-  ngOnDestroy(): void {
-    this.swipeSub.unsubscribe();
   }
 
   getNextProject() {
